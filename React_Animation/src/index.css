@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+
+.grid {
+  overflow: hidden;
+}
+
+.grid>div {
+  grid-row: var(--r);
+  grid-column: var(--c);
+}
+
+.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
