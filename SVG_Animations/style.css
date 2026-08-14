@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #101010;
+}
+
+.signature{
+    stroke-dasharray:1;
+    stroke-dashoffset: 1;
+    animation: svg-path-animation 2s ease-out infinite alternate;
+    
+}
+
+@keyframes svg-path-animation{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+.ball{
+    offset-path: path('M10,120 C120,-20 280,320 390,30');
+    animation: ball-animation 3.5s ease-out infinite alternate;
+
+}
+@keyframes ball-animation{
+    0%{
+        offset-distance: 0%;
+    }
+    100%{
+        offset-distance: 100%;
+    }
+}

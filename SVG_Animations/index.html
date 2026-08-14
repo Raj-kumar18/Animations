@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG - ANIMATIONS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- SVG = Scalable Vector Graphics. It's HTML for drawing — instead of <div>, you get <circle></circle> -->
+        <!-- 
+    It's math, not pixels, so it never blurs when scaled — and since it lives in the DOM, CSS can style and animate it exactly like an HTML element.
+
+One thing worth knowing before anything else: an SVG's `(0,0)` origin is the **top-left corner** of the canvas, not the center. Keep that in mind — it explains the `transform-origin` gotcha in Section 3. -->
+        <!-- 
+# The `transform-origin` trap ⚠️
+
+The #1 "why is my shape flying off into space" bug. By default, `transform-origin` is the **top-left of the whole SVG canvas** — not the center of your shape. So `rotate()` on a circle sitting away from the corner orbits it like a satellite instead of spinning in place.
+
+**The two-line fix — always add these when rotating/scaling SVG shapes:**
+
+```css
+.your-shape {
+  transform-box: fill-box;   /* use the shape's own bounding box */
+  transform-origin: center;  /* now "center" means the shape's center */
+}
+``` -->
+
+
+
+
+        <!-- 
+
+        <svg width="200" height="200">
+            <circle cx="100" cy="100" r="100" fill="orange" />
+        </svg> -->
+
+
+        <!-- 
+            # `stroke-dasharray`, done properly
+
+    You've probably seen the "line draws itself" trick with a random big `stroke-dasharray` number (like `1000`), hoping it's bigger than the path. Here's the actual professional version.
+
+    SVG paths have a `pathLength` attribute that lets **you** define what "100%" means, instead of relying on the browser's real geometric length. Set it to `1`, and `stroke-dasharray`/`stroke-dashoffset` become clean fractions from `0` to `1` — no guessing, no measuring.
+            -->
+
+
+        <!-- <svg width="300" height="140" viewBox="0 0 300 120">
+            <path class="signature" pathLength="1" d="M10,80 C60,10 120,120 180,40 S260,10 290,60" fill="none"
+                stroke="white" stroke-width="4" />
+        </svg> -->
+
+       <!-- <svg width="400" height="170" viewBox="0 0 400 150">
+  <path id="track" d="M10,120 C120,-20 280,320 390,30" fill="none" stroke="#ddd" stroke-width="2" />
+  <circle class="ball" r="10" fill="#e17055" />
+</svg> -->
+
+
+<svg class="wave-text" viewBox="0 0 500 60">
+  <path id="curve" d="M10,40 C130,-10 370,90 490,30" fill="none"  />
+  <text font-size="24" fill="white">
+    <textPath href="#curve" startOffset="0%">
+      Creative Web Developer
+      <animate attributeName="startOffset" from="0%" to="100%" dur="6s" repeatCount="indefinite" />
+    </textPath>
+  </text>
+</svg>
+
+
+
+    </div>
+
+</body>
+
+</html>

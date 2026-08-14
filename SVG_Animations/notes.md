@@ -1,0 +1,1 @@
+https://app.notion.com/p/SVG-Animations-For-Beginners-by-Swaraj-Singh-3af69b6210fc8093b531cfcacf4f0380

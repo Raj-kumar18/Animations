@@ -77,8 +77,6 @@ animateCursor();
 // ============================================
 
 const title = document.getElementById("hero-title");
-
-
 // Split every word into characters
 title.querySelectorAll(".word").forEach((word) => {
     const text = word.textContent;
