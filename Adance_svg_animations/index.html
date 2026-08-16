@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance-SVG-Animatmions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="app">
+        <!-- <svg width="0" height="0">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix
+        in="blur"
+        mode="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 18 -7"
+        result="goo"
+      />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </defs>
+</svg> -->
+        <!-- <div class="goo-wrap">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+        </div> -->
+
+
+
+         <svg width="0" height="0">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur" >
+                        <animate 
+                        attributeName="stdDeviation"
+                        values="0; 10; 10;10; 0"
+                        dur="4.6s"
+                        repeatCount="indefinite"
+                        />
+                    </feGaussianBlur>
+
+                    <feColorMatrix
+                        in="blur"
+                        mode="matrix"
+                        values="1 0 0 0 0
+                                0 1 0 0 0
+                                0 0 1 0 0
+                                0 0 0 18 -7"
+                        result="goo"/>
+
+                        <fecomposite in="SourceGraphic" in2="goo" operator="atop"/>
+
+                </filter>
+            </defs>
+         </svg>
+         <div class="goo-wrap">
+            <div class="goo-text">Creative Developer</div>
+        </div>
+
+
+</body>
+</html>
